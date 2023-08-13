@@ -8,12 +8,17 @@
 
 name: Project CICD Flow
 
+# Informing Github Actions that, if there's any PUSH to my MASTER branch, or if there's any PULL REQUEST merged to
+# my MASTER branch, then execute all the JOBS listed below
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
+# Informing Github Actions, to do these build on the ubuntu-latest
+# You can execute your workflow in any Operating System (Ubuntu, MacOS, Windows etc)
+# We use Ubuntu-latest
 jobs:
   build:
     permissions: write-all
